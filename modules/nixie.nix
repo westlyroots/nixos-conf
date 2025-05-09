@@ -10,5 +10,6 @@ imports = [
 ./firefox.nix
 ./pipewire.nix
 ./updates.nix
+./hyprland.nix
 ];
 }

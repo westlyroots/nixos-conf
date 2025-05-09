@@ -5,6 +5,7 @@
     # NixOS official package source, using the nixos-24.11 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    inputs.hyprland.url = "github:hyprwm/Hyprland";
     nixos-xivlauncher-rb = {
       url = "github:drakon64/nixos-xivlauncher-rb";
       inputs.nixpkgs.follows = "nixpkgs";

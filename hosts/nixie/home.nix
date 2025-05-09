@@ -127,12 +127,6 @@ home.shell.enableZshIntegration = true;
   enableZshIntegration = true;
   };*/
 
-  programs.kitty.enable = true; # required for the default Hyprland config
-  wayland.windowManager.hyprland= {
-  enable = true;
-  package = null;
-  portalPackage = null;
-  };
 programs.neovim = {
   enable = true;
   extraConfig = ''
