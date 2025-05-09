@@ -11,7 +11,6 @@
     bind =
       [
         "$mod, F, exec, firefox"
-        ", Print, exec, grimblast copy area"
       ]
       ++ (
         # workspaces
