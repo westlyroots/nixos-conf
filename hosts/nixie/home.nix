@@ -16,7 +16,9 @@ nixpkgs.config = {
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
-
+  imports = [
+    ../../modules/home.nixie.nix
+  ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -89,7 +91,7 @@ nixpkgs.config = {
   #  /etc/profiles/per-user/westlyroots/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "vim";
+     EDITOR = "nvim";
      TEST = "uwu";
   };
 
@@ -116,7 +118,7 @@ nixpkgs.config = {
   shellAliases = {
   add ="git add .";
   commit = "git commit -S -m";
-  update = "sudo nixos-rebuild switch --flake ${builtins.toString ./.}";
+  update = "sudo nixos-rebuild switch --flake github:westlyroots/nixos-conf";
   };
   history.size = 10000;
   };
