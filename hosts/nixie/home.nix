@@ -114,7 +114,9 @@ nixpkgs.config = {
       }
     ];
   shellAliases = {
-  update = "sudo nixos-rebuild switch";
+  add ="git add .";
+  commit = "git commit -S -m";
+  update = "sudo nixos-rebuild switch --flake ${./.}";
   };
   history.size = 10000;
   };
