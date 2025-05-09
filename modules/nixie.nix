@@ -11,5 +11,6 @@ imports = [
 ./pipewire.nix
 ./updates.nix
 ./hyprland.nix
+./virt-manager.nix
 ];
 }
