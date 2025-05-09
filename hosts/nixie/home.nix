@@ -53,6 +53,7 @@ nixpkgs.config = {
   enable = true;
   userEmail = "westlyroots@proton.me";
   userName = "westlyroots";
+  signing.key = "00F358534DB03F5AC75F87E92EFCDF33E3EC99A8";
 };
 
 
