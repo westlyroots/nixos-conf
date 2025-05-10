@@ -130,6 +130,7 @@
     git-crypt
     gnupg
     pinentry-curses
+    keepassxc
   ];
 
 
