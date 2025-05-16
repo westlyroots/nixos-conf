@@ -20,6 +20,7 @@
         "float, class:(clipse)"
         "size 622 652, class:(clipse)"
         "content game, class:^steam_app\d+$"
+        "workspace 3, class:keepassxc"
       ];
       bind =
         [
@@ -59,6 +60,9 @@
         gaps_out = 20;
         border_size = 2;
         layout = "dwindle";
+      };
+      render = {
+      direct_scanout = 2;
       };
       decoration = {
         rounding = 10;
