@@ -12,14 +12,18 @@
       "$terminal" = "kitty";
       exec-once = [
         "waybar"
+        "keepassxc"
+        "clipse -listen"
       ];
       windowrule = [
         "immediate, content:game"
-    #   "content game, "
+        "float, class:(clipse)"
+        "size 622 652, class:(clipse)"
+        "content game, class:^steam_app\d+$"
       ];
       bind =
         [
-          "$mod, F, exec, firefox"
+          "$mod, B, exec, firefox"
           "$mod, T, exec, $terminal"
           "$mod, M, exit"
           "$mod, Q, killactive"
@@ -27,6 +31,7 @@
           "$mod, J, togglesplit"
           "$mod, F, fullscreen"
           "$mod, L, exec, pkill rofi || rofi -show drun"
+          "$mod, V, exec, $terminal --class clipse -e 'clipse'"
           ]
         ++ (
           # workspaces
