@@ -78,7 +78,7 @@
     enable = true;
     package = pkgs.rofi-wayland;
     # theme =
-    extraconfig = {
+    extraConfig = {
     terminal = "kitty";
     show-icons = true;
     me-accept-entry = "MousePrimary";
