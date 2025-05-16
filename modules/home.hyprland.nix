@@ -29,6 +29,7 @@
           "$mod, T, exec, $terminal"
           "$mod, M, exit"
           "$mod, Q, killactive"
+	  "SUPER_SHIFT, Q, forcekillactive"
           "$mod, P, pseudo"
           "$mod, J, togglesplit"
           "$mod, F, fullscreen"
@@ -74,6 +75,9 @@
       render = {
       direct_scanout = 2;
       };
+      animation = [
+      "workspaces, 1, 5, default"
+      ];
       decoration = {
         rounding = 10;
         rounding_power = 2;
