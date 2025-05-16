@@ -81,8 +81,6 @@
     extraConfig = {
     terminal = "kitty";
     show-icons = true;
-    me-accept-entry = "MousePrimary";
-    kb-cancel = "Escape,MouseMiddle";
     };
   };
   # Optional, hint Electron apps to use Wayland:
