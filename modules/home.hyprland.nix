@@ -23,6 +23,7 @@
         "workspace 3, class:keepassxc"
 	"content game, class:(ffxiv_dx11.exe)"
 	"content game, class:(tf_linux64)"
+	"fullscreen, class:(tf_linux64)"
       ];
       bind =
         [
