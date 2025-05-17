@@ -22,6 +22,7 @@
         "content game, class:^steam_app\d+$"
         "workspace 3, class:keepassxc"
 	"content game, class:(ffxiv_dx11.exe)"
+	"content game, class:(tf_linux64)"
       ];
       bind =
         [
@@ -109,6 +110,9 @@
     terminal = "kitty";
     show-icons = true;
     };
+  };
+  services.dunst = {
+  enable = true;
   };
   # Optional, hint Electron apps to use Wayland:
   # home.sessionVariables.NIXOS_OZONE_WL = "1";
