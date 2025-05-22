@@ -12,5 +12,6 @@ imports = [
 ./updates.nix
 ./hyprland.nix
 ./virt-manager.nix
+./hyprshot.nix
 ];
 }
