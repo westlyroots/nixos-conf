@@ -98,7 +98,7 @@
   users.users.westlyroots = {
     isNormalUser = true;
     description = "Alicia Monrow";
-    extraGroups = [ "networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" "input"];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
