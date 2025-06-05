@@ -36,6 +36,7 @@
           "$mod, P, pseudo"
           "$mod, J, togglesplit"
           "$mod, F, fullscreen"
+	  "$mod, O, togglefloating"
           "$mod, L, exec, pkill rofi || rofi -show drun"
           "$mod, V, exec, $terminal --class clipse -e 'clipse'"
 	  "SUPER_SHIFT, Print, exec, hyprshot -m region"
