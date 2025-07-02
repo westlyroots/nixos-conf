@@ -14,6 +14,7 @@
         "waybar"
         "keepassxc"
         "clipse -listen"
+	"systemctl --user start hyprpolkitagent"
       ];
       windowrule = [
         "immediate, content:game"

@@ -8,5 +8,6 @@ programs.hyprland = {
   };
 environment.systemPackages = [
     pkgs.clipse
+    pkgs.hyprpolkitagent
   ];
 }
