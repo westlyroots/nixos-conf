@@ -19,11 +19,12 @@
         "immediate, content:game"
         "float, class:(clipse)"
         "size 622 652, class:(clipse)"
-        "content game, class:^steam_app\d+$"
+        "content game, class:^steam_app_\d+$"
         "workspace 3, class:keepassxc"
 	"content game, class:(ffxiv_dx11.exe)"
 	"content game, class:(tf_linux64)"
 	"content game, class:(Devil Daggers)"
+	#"content game, class:(steam_app_*)"
 	"fullscreen, class:(tf_linux64)"
       ];
       bind =

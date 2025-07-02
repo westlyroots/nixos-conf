@@ -74,7 +74,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  programs.partition-manager.enable = true;
   # Enable sound with pipewire.
   /*services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -132,6 +132,7 @@
     gnupg
     pinentry-curses
     keepassxc
+    ungoogled-chromium
   ];
 
 services.mpd = {
