@@ -13,5 +13,6 @@ imports = [
 ./hyprland.nix
 ./virt-manager.nix
 ./hyprshot.nix
+./tailscale.nix
 ];
 }

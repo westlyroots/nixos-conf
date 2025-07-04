@@ -9,7 +9,7 @@
     xwayland.enable = true;
     settings = {
       "$mod" = "SUPER";
-      "$terminal" = "kitty";
+      "$terminal" = "alacritty";
       exec-once = [
         "waybar"
         "keepassxc"
