@@ -6,6 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
+   # noita.url = "github:IntQuant/noita_entangled_worlds";
     nixos-xivlauncher-rb = {
       url = "github:drakon64/nixos-xivlauncher-rb";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +22,11 @@
     inputs.nixpkgs.follows = "nixpkgs";
     };
     lucem.url = "github:xTrayambak/lucem";
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+    };
   };
 
   outputs = { self, nixpkgs, nixos-xivlauncher-rb, chaotic, solaar, home-manager, lucem, ... }@inputs: {

@@ -14,5 +14,8 @@ imports = [
 ./virt-manager.nix
 ./hyprshot.nix
 ./tailscale.nix
+./dns.nix
+./sunshine.nix
+./waydroid.nix
 ];
 }

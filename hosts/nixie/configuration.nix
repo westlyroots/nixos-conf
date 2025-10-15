@@ -9,7 +9,13 @@
       ./hardware-configuration.nix
     ];
 
-
+boot.supportedFilesystems = [ "ntfs" ];
+/*fileSystems."/run/media/westlyroots/Windows" = 
+{ 	device = "/dev/disk/by-uuid/DE8C1CA18C1C766D";
+	fsType = "ntfs-3g";
+	options = [ "rw" "uid=1000"];
+};*/
+boot.kernel.sysctl."kernel.sysrq" = 502;
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
@@ -21,7 +27,7 @@
       westlyroots = import ./home.nix;
       };
     };
-
+ fonts.fontDir.enable = true;
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
@@ -44,6 +50,9 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+services.yggdrasil.enable = true;
+services.gvfs.enable = true; # Mount, trash, and other functionalities
+services.tumbler.enable = true; # Thumbnail support for images
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -59,18 +68,24 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
+
+programs.thunar.enable = true;
+programs.xfconf.enable = true;
+
+
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
-  hardware.wooting.enable = true;
+  #hardware.wooting.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -105,7 +120,11 @@
     ];
   };
 
-fileSystems."/export/test" = {
+/*nixpkgs.config.permittedInsecurePackages = [
+                "libsoup-2.74.3"
+              ];*/
+
+/*fileSystems."/export/test" = {
 	device = "/dev/sdb1";
 	#options = [  ];
 	};
@@ -117,18 +136,18 @@ services.nfs.server = {
     mountdPort = 4002;
     statdPort = 4000;
     extraNfsdConfig = '''';
-  };
+  };*/
   networking.firewall = {
     enable = true;
       # for NFSv3; view with `rpcinfo -p`
     allowedTCPPorts = [ 111  2049 4000 4001 4002 20048 ];
-    allowedUDPPorts = [ 111 2049 4000 4001  4002 20048 ];
+    allowedUDPPorts = [ 111 2049 4000 4001  4002 20048 34197 ];
   };
-services.nfs.server.exports = ''
+/*services.nfs.server.exports = ''
 	/export *(insecure,rw,sync,no_subtree_check,crossmnt,fsid=0)
 	/export/test *(insecure,rw,async,no_subtree_check)
 
-'';
+'';*/
 
   # Install firefox.
 
@@ -141,6 +160,7 @@ services.nfs.server.exports = ''
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     git
     #(xivlauncher-rb.override { useGameMode = true; })
     nil
@@ -151,13 +171,26 @@ services.nfs.server.exports = ''
     signal-desktop
     inputs.lucem.packages.x86_64-linux.lucem
     kitty
+    tor-browser-bundle-bin
     git-crypt
     gnupg
     pinentry-curses
+    kdePackages.ark
     keepassxc
+    parsec-bin
     ungoogled-chromium
+    wl-clipboard
+    steamcmd
+
+
+    transmission_4-qt
   ];
 
+# Example for /etc/nixos/configuration.nix
+services.syncthing = {
+  enable = true;
+  openDefaultPorts = true; # Open ports in the firewall for Syncthing
+};
 services.mpd = {
 	user = "westlyroots";
 	enable = true;
@@ -175,7 +208,21 @@ systemd.services.mpd.environment = {
 	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.westlroots/uid}";
 };
 
-
+services.avahi = {
+	nssmdns6 = true;
+	nssmdns4 = true;
+	enable = true;
+	ipv4 = true;
+	ipv6 = true;
+	publish = {
+		enable = true;
+		addresses = true;
+		domain = true;
+		hinfo = true;
+		userServices = true;
+		workstation = true;
+		};
+	};
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

@@ -80,12 +80,17 @@
         border_size = 2;
         layout = "dwindle";
       };
+      misc = {
+      enable_anr_dialog = false;
+      };
       render = {
       direct_scanout = 2;
       };
       animation = [
       "workspaces, 1, 5, default"
       ];
+      #env = "HYPRCURSOR_THEME,rose-pine-hyprcursor";
+      
       decoration = {
         rounding = 10;
         rounding_power = 2;
@@ -111,14 +116,21 @@
   };
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     # theme =
     extraConfig = {
     terminal = "kitty";
     show-icons = true;
     };
   };
-  services.dunst = {
+  home.pointerCursor = {
+  gtk.enable = true;
+  x11.enable = true;
+  package = pkgs.bibata-cursors;
+  name = "Bibata-Modern-Classic";
+  size = 16;
+};
+services.dunst = {
   enable = true;
   };
   # Optional, hint Electron apps to use Wayland:

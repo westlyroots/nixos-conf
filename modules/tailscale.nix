@@ -32,7 +32,7 @@ systemd.services.tailscale-autoconnect = {
     fi
 
     # otherwise authenticate with tailscale
-    ${tailscale}/bin/tailscale up -authkey tskey-auth-kcFvwbUTV621CNTRL-QeZKMXvCvPEwMAqDFRn8PEBdNWWYZAT8T 
+    ${tailscale}/bin/tailscale up -authkey tskey-auth-kcTtaWxUBc11CNTRL-NLn9i5LfGpKPpF43oziYoKxUTZcAy41g 
   '';
 };
 # ...
@@ -47,7 +47,7 @@ networking.firewall = {
   allowedUDPPorts = [ config.services.tailscale.port ];
 
   # let you SSH in over the public internet
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  allowedTCPPorts = [ 22 ];
 };
 
 }
