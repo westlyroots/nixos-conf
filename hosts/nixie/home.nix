@@ -40,12 +40,14 @@ nixpkgs.config = {
     # thefuck
      zsh-powerlevel10k
      lutris
+     itch
      telegram-desktop
      git-credential-keepassxc
      protonup-qt
      cmus
      bolt-launcher
      gimp3
+     discordo
      htop
      btop-rocm
      imv
@@ -53,6 +55,9 @@ nixpkgs.config = {
      protonplus
      prismlauncher
     # thunar
+    thunderbird
+    mumble
+    sabnzbd
      lf
      #cinny-desktop
      

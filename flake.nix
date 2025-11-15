@@ -21,7 +21,7 @@
     url = "github:nix-community/home-manager";
     inputs.nixpkgs.follows = "nixpkgs";
     };
-    lucem.url = "github:xTrayambak/lucem";
+    #lucem.url = "github:xTrayambak/lucem";
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +29,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-xivlauncher-rb, chaotic, solaar, home-manager, lucem, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-xivlauncher-rb, chaotic, solaar, home-manager, ... }@inputs: {
     nixosConfigurations.nixie = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs; };

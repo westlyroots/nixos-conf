@@ -151,6 +151,8 @@ services.nfs.server = {
 
   # Install firefox.
 
+programs.gpu-screen-recorder.enable = true; # For promptless recording on both CLI and GUI
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
  # Enable the Flakes feature and the accompanying new nix command-line tool
@@ -167,20 +169,27 @@ services.nfs.server = {
     unrar
     bottles
     goverlay
+    xdg-utils
     mangohud
     signal-desktop
-    inputs.lucem.packages.x86_64-linux.lucem
+    #inputs.lucem.packages.x86_64-linux.lucem
     kitty
-    tor-browser-bundle-bin
+    tor-browser
     git-crypt
     gnupg
     pinentry-curses
     kdePackages.ark
     keepassxc
+    (discord-canary.override {
+    	withOpenASAR = true;
+	withVencord = true;})
     parsec-bin
     ungoogled-chromium
     wl-clipboard
+    gpu-screen-recorder-gtk # GUI app
     steamcmd
+    session-desktop
+    kdePackages.kdenlive
 
 
     transmission_4-qt
