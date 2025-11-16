@@ -32,6 +32,7 @@ nixpkgs.config = {
      gamescope
      vlc
      spotify
+     yt-dlp
      vesktop
      proton-pass
      obs-studio
@@ -44,7 +45,7 @@ nixpkgs.config = {
      telegram-desktop
      git-credential-keepassxc
      protonup-qt
-     cmus
+     #cmus
      bolt-launcher
      gimp3
      discordo
