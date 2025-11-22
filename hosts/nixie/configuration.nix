@@ -200,7 +200,7 @@ services.syncthing = {
   enable = true;
   openDefaultPorts = true; # Open ports in the firewall for Syncthing
 };
-services.mpd = {
+/*services.mpd = {
 	user = "westlyroots";
 	enable = true;
 	musicDirectory = "/run/media/westlyroots/Storage/Music/";
@@ -211,11 +211,11 @@ services.mpd = {
   		}
 
 	'';
-	#network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+	network.startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
 };
 systemd.services.mpd.environment = {
 	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.westlroots/uid}";
-};
+};*/
 
 services.avahi = {
 	nssmdns6 = true;

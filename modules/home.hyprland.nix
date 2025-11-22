@@ -17,16 +17,15 @@
 	"systemctl --user start hyprpolkitagent"
       ];
       windowrule = [
-        "immediate, content:game"
-        "float, class:(clipse)"
-        "size 622 652, class:(clipse)"
-        "content game, class:^steam_app_\d+$"
-        "workspace 3, class:keepassxc"
-	"content game, class:(ffxiv_dx11.exe)"
-	"content game, class:(tf_linux64)"
-	"content game, class:(Devil Daggers)"
+        "match:content game, immediate on"
+	"match:class (clipse), float true"
+        "match:class (clipse, size 622 652"
+        "match:class ^steam_app_\d+$, content game"
+        #"workspace 3, class:keepassxc"
+	"match:class (ffxiv_dx11.exe), content game"
+	"match:class (tf_linux64), content game"
 	#"content game, class:(steam_app_*)"
-	"fullscreen, class:(tf_linux64)"
+	"match:content game, fullscreen true"
       ];
       bind =
         [
@@ -58,6 +57,8 @@
         );
 	bindel = [
 	  ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+	  "$mod, XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%+"
+	  "$mod, XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%-"
 	  ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
 	  ];
 	bindl = [

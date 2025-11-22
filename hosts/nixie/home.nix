@@ -228,11 +228,13 @@ nixpkgs.config = {
 
   programs.git = {
   enable = true;
-  userEmail = "westlyroots@proton.me";
-  userName = "westlyroots";
   signing.key = "00F358534DB03F5AC75F87E92EFCDF33E3EC99A8";
-  extraConfig = {
+  settings = {
   credential.helper = "keepassxc --git-groups";
+  user = {
+  email = "westlyroots@proton.me";
+  name = "westlyroots";
+  };
   };
 };
 
