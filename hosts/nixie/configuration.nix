@@ -85,6 +85,12 @@ programs.xfconf.enable = true;
     layout = "us";
     variant = "";
   };
+
+xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland ];
+    };
+
   #hardware.wooting.enable = true;
 
   # Enable CUPS to print documents.
