@@ -1,4 +1,11 @@
 {...}:{
+networking = {
+    nameservers = [ "127.0.0.1" "::1" ];
+    # If using dhcpcd:
+    dhcpcd.extraConfig = "nohook resolv.conf";
+    # If using NetworkManager:
+    networkmanager.dns = "none";
+  };
 services.dnscrypt-proxy = {
     enable = true;
     # Settings reference:
@@ -18,7 +25,7 @@ services.dnscrypt-proxy = {
       };
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-       server_names = [ "cloudflare" "cloudflare-ipv6" ];
+       server_names = [ "quad9-dnscrypt-ip6-filter-ecs-pri" "quad9-dnscrypt-ip4-filter-ecs-pri" ];
     };
   };
   }
