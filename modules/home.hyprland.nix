@@ -72,10 +72,12 @@
         "$mod, mouse:273, resizewindow"
         "$mod ALT, mouse:272, resizewindow"
       ];
+      #monitorv2 = {
+	
       monitor = [
-        ", highrr, auto, 1"];
+        "DP-3, highrr, auto, 1, vrr, 2"];
       general = {
-        allow_tearing = true;
+        #allow_tearing = true;
         gaps_in = 5;
         gaps_out = 20;
         border_size = 2;
@@ -86,6 +88,7 @@
       };
       render = {
       direct_scanout = 2;
+      cm_auto_hdr = 0;
       };
       animation = [
       "workspaces, 1, 5, default"
