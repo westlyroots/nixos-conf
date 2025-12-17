@@ -15,6 +15,10 @@ boot.supportedFilesystems = [ "ntfs" ];
 	fsType = "ntfs-3g";
 	options = [ "rw" "uid=1000"];
 };*/
+
+boot.kernelModules = [
+"ntsync"
+];
 boot.kernel.sysctl."kernel.sysrq" = 502;
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
@@ -147,8 +151,8 @@ services.nfs.server = {
   networking.firewall = {
     enable = true;
       # for NFSv3; view with `rpcinfo -p`
-    allowedTCPPorts = [ 111  2049 4000 4001 4002 20048 ];
-    allowedUDPPorts = [ 111 2049 4000 4001  4002 20048 34197 ];
+    allowedTCPPorts = [ 111  2049 4000 4001 4002 20048 5123 2151 ];
+    allowedUDPPorts = [ 111 2049 4000 4001  4002 20048 34197 5123 2151];
   };
 /*services.nfs.server.exports = ''
 	/export *(insecure,rw,sync,no_subtree_check,crossmnt,fsid=0)
@@ -197,10 +201,12 @@ programs.gpu-screen-recorder.enable = true; # For promptless recording on both C
     steamcmd
     session-desktop
     kdePackages.kdenlive
-
+    piper
 
     transmission_4-qt
   ];
+
+  services.ratbagd.enable = true;
 
 # Example for /etc/nixos/configuration.nix
 services.syncthing = {

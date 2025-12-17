@@ -37,11 +37,13 @@ nixpkgs.config = {
      proton-pass
      obs-studio
      xivlauncher
+     osu-lazer-bin
      nicotine-plus
     # thefuck
      zsh-powerlevel10k
      lutris
      itch
+     high-tide
      telegram-desktop
      git-credential-keepassxc
      protonup-qt

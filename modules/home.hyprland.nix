@@ -11,9 +11,8 @@
       "$mod" = "SUPER";
       "$terminal" = "alacritty";
       exec-once = [
-        "waybar"
-        "keepassxc"
-        "clipse -listen"
+        "uwsm app -- waybar"
+        "uwsm app -- clipse -listen"
 	"systemctl --user start hyprpolkitagent"
       ];
       windowrule = [
@@ -75,7 +74,7 @@
       #monitorv2 = {
 	
       monitor = [
-        "DP-3, highrr, auto, 1, vrr, 2"];
+        "DP-3, highrr, auto, 1, vrr, 2, bitdepth, 10, cm, wide"];
       general = {
         #allow_tearing = true;
         gaps_in = 5;
@@ -87,8 +86,8 @@
       enable_anr_dialog = false;
       };
       render = {
-      direct_scanout = 2;
-      cm_auto_hdr = 0;
+      #direct_scanout = 2;
+      cm_auto_hdr = 1;
       };
       animation = [
       "workspaces, 1, 5, default"
